@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".about, .project, .extra");
+
+    /* ===== INDEX PAGE ANIMATIONS ===== */
+    const indexSections = document.querySelectorAll(
+        ".about, .project, .extra"
+    );
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -9,8 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.1 }
+        { threshold: 0.2 }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    indexSections.forEach((section) => observer.observe(section));
+
+    /* ===== ABOUT PAGE ANIMATIONS ===== */
+    const aboutSections = document.querySelectorAll(".about-section");
+
+    aboutSections.forEach((section) => observer.observe(section));
 });
